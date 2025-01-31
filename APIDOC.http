@@ -1,0 +1,110 @@
+#api for creating a user account
+
+###
+
+POST http://127.0.0.1:8000/api/signup/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "email":"django@gmail.com",
+    "password":"Password@123"
+}
+
+# APi for getting token
+
+###
+
+POST  http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"Password@123"
+}
+
+# Api for update
+
+###
+
+PUT http://127.0.0.1:8000/api/profile/
+Content-Type: application/json
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
+{
+    "adress":"snehalayam",
+    "phone":"9876543324",
+    "bio":"dance lover",
+    "gender":"female"
+    
+}
+
+#api for fetching user profile details
+###
+
+GET  http://127.0.0.1:8000/api/profile/
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
+#api for fetching the user details
+###
+
+GET  http://127.0.0.1:8000/api/user/
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
+#=========POST===========
+
+#api for creating a post
+###
+
+POST http://127.0.0.1:8000/api/posts/
+Content-Type: application/json
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
+{
+    "caption":"Good Morning"
+}
+
+#api for listing the posts
+###
+
+GET http://127.0.0.1:8000/api/posts/
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
+#api for retrieving the detail of a post
+###
+
+GET http://127.0.0.1:8000/api/posts/2/
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
+###
+# api for updating the post
+
+PUT http://127.0.0.1:8000/api/posts/3/
+Content-Type: application/json
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
+{
+    "caption":"Good Morning!!"
+}
+
+###
+#api to delete post
+
+DELETE http://127.0.0.1:8000/api/posts/1/
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
+#api for creating a comment
+###
+
+POST http://127.0.0.1:8000/api/posts/2/comments/
+Content-Type: application/json
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
+{
+    "message":"heyy!!"
+}
+
+###
+POST http://127.0.0.1:8000/api/posts/2/add-like/
+Authorization: Token 3000d641355fb09ea5acab307d3f328e2cd9c7f8
+
