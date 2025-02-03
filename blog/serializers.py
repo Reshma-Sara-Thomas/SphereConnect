@@ -52,11 +52,8 @@ class CommentSerializer(serializers.ModelSerializer):
         
         fields="__all__"
         
-        read_only_fileds=['id','owner','post_object','created_at','updated_at']
+        read_only_fileds=['id','owner','post_object','created_at','updated_at']   
         
-
-    
-
 class PostSerializer(serializers.ModelSerializer):
     
     owner=serializers.StringRelatedField(read_only=True)
